@@ -5,7 +5,9 @@ class Ticket{
 
     /** * @var array * */
 
-    public function ListeCourse(){
+    private $listeCourse;
 
+    public function __construct(){
+        $this->$listeCourse = array();
     }
 }
