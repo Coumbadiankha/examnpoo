@@ -7,11 +7,18 @@ class Item{
     private $Weight;
     private $date;
 
-    public function __construct($name,$price,$weight, $date)
+    public function __construct(
+        $name,
+        $price,
+        $weight,
+        $date)
     {
         $this->Name = $name;
+
         $this->Price = $price;
+
         $this->Weight = $weight;
+        
         $this->Date = $date;
     }
     public function getName(){

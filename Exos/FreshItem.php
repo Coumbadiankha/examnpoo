@@ -13,7 +13,12 @@ class FreshItem extends Item{
         $weight,
         $date)
     {
-        parent::__construct($name,$price,$weight);
+        parent::__construct(
+            $name,
+            $price,
+            $weight,
+            $date);
+
         $this->bestBeforeDate = date('YYYY-MM-DD',strtotime($date));
     }
 

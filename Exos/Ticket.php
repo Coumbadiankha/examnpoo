@@ -1,5 +1,11 @@
 <?php
+require_once("Item.php");
 
-class Ticket{   
-    
+class Ticket{ 
+
+    /** * @var array * */
+
+    public function ListeCourse(){
+
+    }
 }
