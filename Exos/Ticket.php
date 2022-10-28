@@ -1,13 +1,22 @@
 <?php
-require_once("Item.php");
 
-class Ticket{ 
+class Ticket{
 
-    /** * @var array * */
+    /** @var long */
+    private $Price;
 
-    private $listeCourse;
+    /** @var String */
+    private $Ref;
 
-    public function __construct(){
-        $this->$listeCourse = array();
+    public function __construct($price, $ref)
+    {
+        $this->Price=$price;
+        $this->Ref=$ref;
     }
+
+     /** @return  long */ 
+     public function getPrice(){return $this->Price;}
+
+    /** @return  String */ 
+    public function getRef(){return $this->Ref;}
 }

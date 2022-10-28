@@ -20,7 +20,7 @@ class ShoppingCart{
         if(empty($this->listPanier) && $item->getWeight() < 1000){
             $this->listPanier[]=$item;
         }else{
-            if(($this->totalWeight() + $item->getWeight()) < 1000){
+            if(($this->totalWeight() + $item->getWeight()) < 100000){
                 $this->listPanier[]=$item;
             }}
     }
@@ -62,14 +62,14 @@ class ShoppingCart{
 
     public function toString()
     {
-        $ligne1= "id :".$this->id."  count item :".$this->itemCount();
+        $ligne1= "id :".$this->id." et count item :".$this->itemCount();
         $ligne2= "";
         foreach ($this->listPanier as &$value) {
             $ligne2 = $ligne2."<p>".$value->toString()."</p>";
         }
         return (<<<HTML
         <html>
-        <body><h3>$ligne1</h3>
+        <body><h4>$ligne1</h4>
         $ligne2
         </body>
         </html>
@@ -78,12 +78,12 @@ class ShoppingCart{
 }
 
 $shoppingCart = new ShoppingCart();
-$shoppingCart2 = new ShoppingCart();
 
 
-$shoppingCart->addItem(new Item("corn flakes", 500, 8, 2022-10-29));
-$shoppingCart->addItem(new Item("chaussures", 200, 0.5, 2022-10-30));
-$shoppingCart->addItem(new Item("veste", 1200, 7, 2022-10-31));
+
+$shoppingCart->addItem(new Item("Cornflakes", 500, 300, 2022-10-29));
+$shoppingCart->addItem(new Item("Chaussures", 200, 500, 2022-10-30));
+$shoppingCart->addItem(new Item("Veste", 1200, 900, 2022-10-31));
 
 
 print($shoppingCart->toString());
