@@ -63,14 +63,14 @@ class ShoppingCart{
     public function toString()
     {
         $ligne1= "id :".$this->id." et count item :".$this->itemCount();
-        $ligne2= "";
+        $lignebis= "";
         foreach ($this->listPanier as &$value) {
-            $ligne2 = $ligne2."<p>".$value->toString()."</p>";
+            $lignebis = $lignebis."<p>".$value->toString()."</p>";
         }
         return (<<<HTML
         <html>
         <body><h4>$ligne1</h4>
-        $ligne2
+        $lignebis
         </body>
         </html>
     HTML);
@@ -79,11 +79,8 @@ class ShoppingCart{
 
 $shoppingCart = new ShoppingCart();
 
-
-
 $shoppingCart->addItem(new Item("Cornflakes", 500, 300, 2022-10-29));
 $shoppingCart->addItem(new Item("Chaussures", 200, 500, 2022-10-30));
 $shoppingCart->addItem(new Item("Veste", 1200, 900, 2022-10-31));
-
 
 print($shoppingCart->toString());

@@ -7,15 +7,13 @@ require_once("Ticket.php");
 class Payable {
 
     /** * @var long */
-    
+
     private $Taxes;
     
     private $Item;
 
     public function __construct($item){
-
         $this->Item=$item;
-
         switch(get_class($item)){
             case "Ticket":$this->Taxes=25;
                 break;
@@ -41,15 +39,23 @@ class Payable {
         }
         return $this->Item->getName();
     }
+
+
     public function cost(){
         return $this->Item->getPrice();
     }
+
+
     public function getTaxes(){
         return $this->Taxes;
     }
+
+
     public function taxesRatePerTenThousand(){
         return $this->Item->getPrice()*((100+(float)$this->Taxes)/100);
     }
+
+
     public function toString(){
         return " Le label est : ".$this->label().", le prix HT est : ".($this->cost()/100)." €, le prix TCC est : ".($this->taxesRatePerTenThousand()/100)." €";
     }
